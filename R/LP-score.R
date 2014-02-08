@@ -18,8 +18,6 @@ LP.poly <- function(x,m){
     for(j in 1:m){
          TS[,j] <- TS[,j]/(sqrt( ((n-1)*var(TS[,j]))/n ))
       }
-
  return(TS)
-
 
   }
