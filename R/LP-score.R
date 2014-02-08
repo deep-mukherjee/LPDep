@@ -7,7 +7,7 @@
 ##############################################################
 
 
-LP.score <- function(x,m){
+LP.poly <- function(x,m){
 
     n <- length(x)
   
