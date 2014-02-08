@@ -26,3 +26,20 @@ LP.Dep <-function(x,y,m){
  return(Lcor)
 
 }
+
+
+
+MLP.Dep <-function(X,Y,m){  #--For X,Y random vectors
+
+   TX <- Score.mat(as.matrix(X),m)
+   TY <- Score.mat(as.matrix(Y),m)
+
+   COH <- solve(var(TX))%*%cov(TX,TY)%*%solve(var(TY))%*%cov(TY,TX)
+
+
+   return(tr(COH))
+
+
+ }
+
+

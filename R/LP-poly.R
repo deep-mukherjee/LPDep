@@ -7,7 +7,8 @@
 ##############################################################
 
 
-LP.poly <- function(x,m){
+LP.poly <- function(x,m){ #----for X random variable
+
 
     n <- length(x)
   
@@ -21,3 +22,14 @@ LP.poly <- function(x,m){
  return(TS)
 
   }
+
+
+Score.mat <-function(X,m){  #----for X random vector
+  X<- as.matrix(X)
+  SX <- c()
+  for(j in 1:ncol(U)){
+      SX <- as.matrix( cbind(SX,LP.poly(X[,j],m) ) ) 
+      }
+    return(SX)
+   }
+
