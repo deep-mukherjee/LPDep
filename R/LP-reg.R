@@ -37,7 +37,7 @@ y <-T$y
 X<-T$X
 
 Tx <- Score.mat(as.matrix(X),2)
-fit1 <- glmnet(Tx,y)
+fit1 <- glmnet(Tx,y) #--utilizing the existing sparse learning framework for LP-reg
 plot(fit1,label=TRUE)
 
 
