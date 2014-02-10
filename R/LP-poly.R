@@ -10,24 +10,24 @@
 LP.poly <- function(x,m){ #----for X random variable
     n <- length(x)
     u <- (rank(x,"keep") - .5)/n #--mid-distribution transformation
-   TS <- as.matrix(poly(u ,degree= min(length(unique(u ))-1, m)  ))  
+   TX <- as.matrix(poly(u ,degree= min(length(unique(u ))-1, m)  ))  
 
     for(j in 1:m){
-         TS[,j] <- TS[,j]/(sqrt( ((n-1)*var(TS[,j]))/n ))
+         TX[,j] <- TX[,j]/(sqrt( ((n-1)*var(TX[,j]))/n ))
       }
 
- return(TS)
+ return(TX)
   }
 
 
 Score.mat <-function(X,m){  #----for X random vector
   X<- as.matrix(X)
-  SX <- c()
+  TX <- c()
 
   for(j in 1:ncol(X)){
-      SX <- as.matrix( cbind(SX,LP.poly(X[,j],m) ) ) 
+      TX <- as.matrix( cbind(TX,LP.poly(X[,j],m) ) ) 
       }
 
-    return(SX)
+    return(TX)
    }
 
